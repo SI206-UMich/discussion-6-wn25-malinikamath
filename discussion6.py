@@ -62,7 +62,7 @@ def get_annual_max(d):
             if num > maxNum:
                 maxMonth = month
                 maxNum = num
-        t = (year, maxMonth, maxNum)
+        t = (y, maxMonth, maxNum)
         l.append(t)
     return l
 
@@ -79,7 +79,13 @@ def get_month_avg(d):
     Note: Don't strip or otherwise modify strings. Do not change datatypes except where necessary. 
         You'll have to make the vals int or float here and round the avg to pass tests.
     '''
-    pass
+    avg_d = {}
+    for y, year in d.items():
+        count = 0
+        for v in year.values():
+            count += int(v)
+        avg_d[y] = count / len(year.values())
+    return avg_d
 
 class dis7_test(unittest.TestCase):
     '''
