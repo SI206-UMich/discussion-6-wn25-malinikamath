@@ -84,7 +84,7 @@ def get_month_avg(d):
         count = 0
         for v in year.values():
             count += int(v)
-        avg_d[y] = count / len(year.values())
+        avg_d[y] = round(count / len(year.values())) + 0.0
     return avg_d
 
 class dis7_test(unittest.TestCase):
@@ -107,11 +107,11 @@ class dis7_test(unittest.TestCase):
         self.assertAlmostEqual(self.month_avg_dict['2020'], 398, 0)
 
 def main():
-    print("----------------------------------------------------------------------")
-    flight_dict = load_csv('daily_visitors.csv')
-    print("Output of load_csv:", flight_dict, "\n")
-    print("Output of get_annual_max:", get_annual_max(flight_dict), "\n")
-    print("Output of get_month_avg:", get_month_avg(flight_dict), "\n")
+    # print("----------------------------------------------------------------------")
+    # flight_dict = load_csv('daily_visitors.csv')
+    # print("Output of load_csv:", flight_dict, "\n")
+    # print("Output of get_annual_max:", get_annual_max(flight_dict), "\n")
+    # print("Output of get_month_avg:", get_month_avg(flight_dict), "\n")
 
     unittest.main(verbosity=2)
 
